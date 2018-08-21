@@ -20,6 +20,10 @@ app.get("/teams", function(req, res) {
     res.send(data);
 });
 
+app.get("/teams/new", function(req, res) {
+    res.render("./teams/new")
+});
+
 
 app.post("/teams", function(req, res) {
     res.send("post teams");
