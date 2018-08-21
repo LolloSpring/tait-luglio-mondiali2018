@@ -3,13 +3,31 @@ var app = express();
 var request = require("request");
 app.set("view engine", "ejs");
 
-app.get("/", function(req, res) {
-    res.send("Hello");
+
+data = {
+	id: "0",
+	name: "Croazia",
+	is_still_in: true,
+	matches: [
+		{	
+		opponent: "France",
+		outcome: "L"
+		}
+	]
+}
+
+app.get("/teams", function(req, res) {
+    res.send(data);
+});
+
+
+app.post("/teams", function(req, res) {
+    res.send("post teams");
+});
+
+app.listen(3000, function () {
+  console.log('Mondiali listening on port 3000!');
 });
 
 
 
-
-app.listen(3000, function(){
-    console.log("Mondiali App starting");
-})
